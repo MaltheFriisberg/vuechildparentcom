@@ -21,17 +21,20 @@
     name: 'HelloWorld',
 
     props:{
+      //prop passed from parent's v-model
       value: null
     },
     watch: {
+    //watching the internalValue data property  
     internalValue(value) {
         this.$emit('value-updated', value); //emit event to parent
     }
     },
     data: () => ({
-      internalValue: null 
+      internalValue: null //data binding with v-model on this property. 
     }),
     mounted() {
+      //Initially set for vieweing
       this.internalValue = this.value
     }
   }
